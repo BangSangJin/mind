@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>album</title>
+    <link rel="stylesheet" href="./css/stylesheet2.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <a href="hong.html"><img src="./img/logo_white.png" alt="logo"></a>
+    </header>
+    <!-- 사진 . 영상 버튼 -->
+    <div class="btn">
+        <button type="button" class="btn1">추모사진</button>
+        <button type="button" class="btn2">추모영상</button>
+    </div>
+    <!-- 추모사진 -->
+    <div class="img">
+        <div class="imgbox">
+            <figure><img src="./img/img (1).jpg" alt="img"></figure>
+            <figure><img src="./img/img (2).jpg" alt="img"></figure>
+            <figure><img src="./img/img (3).jpg" alt="img"></figure>
+            <figure><img src="./img/img (4).jpg" alt="img"></figure>
+            <figure><img src="./img/img (5).jpg" alt="img"></figure>
+            <figure><img src="./img/img (6).jpg" alt="img"></figure>
+            <figure><img src="./img/img (7).jpg" alt="img"></figure>
+            <figure><img src="./img/img (8).jpg" alt="img"></figure>
+            <figure><img src="./img/img (9).jpg" alt="img"></figure>
+            <figure><img src="./img/img (10).jpg" alt="img"></figure>
+            <figure><img src="./img/img (11).jpg" alt="img"></figure>
+            <figure><img src="./img/img (12).jpg" alt="img"></figure>
+            <figure><img src="./img/img (1).jpg" alt="img"></figure>
+            <figure><img src="./img/img (2).jpg" alt="img"></figure>
+            <figure><img src="./img/img (3).jpg" alt="img"></figure>
+            <figure><img src="./img/img (4).jpg" alt="img"></figure>
+            <figure><img src="./img/img (5).jpg" alt="img"></figure>
+            <figure><img src="./img/img (6).jpg" alt="img"></figure>
+            <figure><img src="./img/img (7).jpg" alt="img"></figure>
+            <figure><img src="./img/img (8).jpg" alt="img"></figure>
+            <figure><img src="./img/img (9).jpg" alt="img"></figure>
+            <figure><img src="./img/img (10).jpg" alt="img"></figure>
+            <figure><img src="./img/img (11).jpg" alt="img"></figure>
+            <figure><img src="./img/img (12).jpg" alt="img"></figure>
+        </div>
+    </div>
+    <!-- 추모영상 -->
+    <div class="video">
+        <div class="videobox">
+            <a href="video.html"><img src="./img/video1.png" alt="video"></a>
+            <a href="video.html"><img src="./img/video2.png" alt="video"></a>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer>
+        <a href="hong.html"><img src="./img/iocn_w (1).png" alt="icon">홈</a>
+        <a href="hong2.html"><img src="./img/iocn_w (2).png" alt="icon">추모앨범</a>
+        <a href="hong3.html"><img src="./img/iocn_w (3).png" alt="icon">하늘편지</a>
+        <a href="hong4.html"><img src="./img/iocn_w (4).png" alt="icon">하늘공원</a>
+    </footer>
+
+
+    <script src="./script/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $(".btn2").click(function () {
+                $(".img").css({ display: 'none' });
+                $(".video").css({ display: 'block' });
+                $(".btn2").css({ color: '#fff', borderBottom:'2px solid #fff'});
+                $(".btn1").css({ color: '#757575', borderBottom:'none'});
+            });
+            $(".btn1").click(function () {
+                $(".img").css({ display: 'block' });
+                $(".video").css({ display: 'none' });
+                $(".btn1").css({ color: '#fff', borderBottom:'2px solid #fff'});
+                $(".btn2").css({ color: '#757575', borderBottom:'none'});
+            });
+        });
+    </script>
+</body>
+
+</html>

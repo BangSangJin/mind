@@ -1,0 +1,134 @@
+@import url(./reset.css);
+body{
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+}
+/* header */
+header{
+    width: 100%;
+    padding: 1.25rem;
+    background-image: url(../img/letterbg1.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    position: sticky;
+}
+header h2{
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin-top: 1rem;
+}
+/* top */
+.top{
+    padding: 1.25rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.top p{
+    color: #fff;
+    font-size: .8rem;
+    margin-right: 1rem;
+}
+.top span{
+    color: #E02727;
+}
+.search{
+    display: flex;
+    border: 1.5px solid #ccc;
+    border-radius: .7rem;
+    padding: .5rem 1rem;
+}
+.search input{
+    color: #fff;
+}
+.search input::placeholder{
+    color: #fff;
+    font-size: .8rem;
+}
+/* .top button{
+    background-color: #fff;
+    padding: .3rem;
+    color: #000;
+    border-radius: .7rem;
+    border: none;
+    font-weight: 700;
+} */
+.top select{
+    background: none;
+    border: 1.5px solid #ccc;
+    padding: .6rem .1rem;
+    border-radius: .7rem;
+    color: #fff;
+    outline: none;
+    margin-right: .5rem;
+}
+.top select option{
+    color: #000;
+}
+/* 편지 */
+    .box{
+        width: 100%;
+        padding: 1.5rem 1.25rem;
+        background-color: #4a4a4a;
+        margin-bottom: .8rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .box p{
+        color: #fff;
+        font-size: 1rem;
+    }
+    .box span{
+     color: #ccc;   
+     font-size: .7rem;
+    }
+    /* 글쓰기 */
+    .letter{
+        position: fixed;
+        background-color: #000;
+        border-radius: 100%;
+        width: 3.4rem;
+        height: 3.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 1.25rem;
+        bottom: 14%;
+        z-index: 99;
+    }
+/* footer */
+footer{
+    max-width: 500px;
+    width: 100%;
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem;
+    }
+    footer a{
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        align-items: center;
+    }
+    footer a img{
+        margin-bottom: .3rem;
+    } 
+    .footer {
+        width: 100%;
+        height: 90px;
+    }
+    

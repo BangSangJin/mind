@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="./css/slick.css" type="text/css">
+    <link rel="stylesheet" href="./css/slick-theme.css" type="text/css">
+    <link rel="stylesheet" href="./css/stylesheet.css" type="text/css">
+    <script src="./script/jquery-3.7.1.min.js"></script>
+    <script src="./script/slick.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="park.html"><img src="./img/logo_white.png" alt="logo"></a>
+    </header>
+    <!-- main slide -->
+    <div class="bgslide">
+        <div class="box">
+            <figure><img src="./img/mainbg (1).png" alt="bg"></figure>
+            <p><span>아버지</span><br><br>
+                <b>故 박xx</b> 님의<br>
+                추모관
+            </p>
+        </div>
+        <div class="box">
+            <figure><img src="./img/mainbg (2).png" alt="bg"></figure>
+            <p><span>아버지</span><br><br><b>故 홍길동</b> 님의
+                <br>추모관
+            </p>
+        </div>
+    </div>
+    <!-- 추모사진 -->
+    <div class="img">
+        <div class="title">
+            <h2>추모사진</h2>
+            <a href="park2.html">더보기></a>
+        </div>
+        <div class="imgscroll">
+            <img src="./img/main (1).jpg" alt="img">
+            <img src="./img/main (2).jpg" alt="img">
+            <img src="./img/main (3).jpg" alt="img">
+            <img src="./img/main (4).jpg" alt="img">
+            <img src="./img/main (5).jpg" alt="img">
+        </div>
+    </div>
+    <!-- 추모영상 -->
+    <div class="video">
+        <div class="title">
+            <h2>추모영상</h2>
+            <a href="park2.html">더보기></a>
+        </div>
+        <div class="videobox">
+            <a href="video_home.html"><img src="./img/video1.png" alt="video"></a>
+            <a href="video_home.html"><img src="./img/video2.png" alt="video"></a>
+        </div>
+    </div>
+    <!-- 하늘편지 -->
+    <div class="letter">
+        <div class="title">
+            <h2>하늘편지</h2>
+            <a href="park3.html">더보기></a>
+        </div>
+        <div class="txtbox">
+            <div class="txt">
+                <p>보고싶은 아버지</p>
+                <span>2024-01-08</span>
+            </div>
+            <div class="txt">
+                <p>정신없이 새해를 보내며...</p>
+                <span>2024-01-02</span>
+            </div>
+            <div class="txt">
+                <p>2024년 첫 편지</p>
+                <span>2024-01-01</span>
+            </div>
+        </div>
+    </div>
+    <!-- 하늘공원 -->
+    <div class="place">
+        <div class="title">
+            <h2>하늘공원</h2>
+            <a href="park4.html">더보기></a>
+        </div>
+        <div class="slide">
+            <figure><img src="./img/img (1).jpg" alt="img"></figure>
+            <figure><img src="./img/img (2).jpg" alt="img"></figure>
+            <figure><img src="./img/img (3).jpg" alt="img"></figure>
+            <figure><img src="./img/img (4).jpg" alt="img"></figure>
+            <figure><img src="./img/img (5).jpg" alt="img"></figure>
+            <figure><img src="./img/img (6).jpg" alt="img"></figure>
+            <figure><img src="./img/img (7).jpg" alt="img"></figure>
+            <figure><img src="./img/img (8).jpg" alt="img"></figure>
+            <figure><img src="./img/img (9).jpg" alt="img"></figure>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer>
+        <a href="park.html"><img src="./img/iocn_w (1).png" alt="icon">홈</a>
+        <a href="park2.html"><img src="./img/iocn_w (2).png" alt="icon">추모앨범</a>
+        <a href="park3.html"><img src="./img/iocn_w (3).png" alt="icon">하늘편지</a>
+        <a href="park4.html"><img src="./img/iocn_w (4).png" alt="icon">하늘공원</a>
+    </footer>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.bgslide').slick({
+                dots: false,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                autoplay: true,
+                autoplaySpeed: 3000,
+                slidesToShow: 1,
+            });
+            $('.slide').slick({
+                dots:true,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  autoplay: true,
+  autoplaySpeed:3000,
+});
+        });
+
+    </script>
+</body>
+
+</html>
