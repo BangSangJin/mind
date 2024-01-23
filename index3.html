@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>letter</title>
+    <link rel="stylesheet" href="./css/stylesheet3.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <figure><img src="./img/logo_w.png" alt="logo"></figure>
+        <h2> 하늘에 있는 그리운 당신에게 편지를 보냅니다.<br>
+            당신이 보고싶습니다.</h2>
+    </header>
+    <!-- top -->
+    <div class="top">
+        <p>총 <span>9</span>건</p>
+        <select>
+            <option>전체</option>
+            <option>제목</option>
+            <option>내용</option>
+        </select>
+        <div class="search">
+            <input type="text" placeholder="검색하기">
+            <figure><img src="./img/search.png" alt="search"></figure>
+        </div>
+        <!-- <button type="button">편지쓰기</button> -->
+    </div>
+    <!-- 편지 -->
+    <div class="box" id="lettersContainer"></div>
+    <!-- 글쓰기 -->
+    <a href="index5.html" class="letter"><img src="./img/letter.png" alt="letter"></a>
+    <!-- footer -->
+    <footer>
+        <a href="hong.html"><img src="./img/iocn_w (1).png" alt="icon">홈</a>
+        <a href="hong2.html"><img src="./img/iocn_w (2).png" alt="icon">추모앨범</a>
+        <a href="hong3.html"><img src="./img/iocn_w (3).png" alt="icon">하늘편지</a>
+        <a href="hong4.html"><img src="./img/iocn_w (4).png" alt="icon">하늘공원</a>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/letters')
+                .then(response => response.json())
+                .then(letters => {
+                    const lettersContainer = document.getElementById('lettersContainer');
+                    letters.forEach(letter => {
+                        const box = document.createElement('div');
+                        box.classList.add('box');
+                        box.innerHTML = `<p>${letter.title}</p><span>${letter.date}</span>`;
+                        lettersContainer.appendChild(box);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+
+            const submitButton = document.querySelector('a[href="index3.html"]');
+            submitButton.addEventListener('click', () => {
+                const title = document.querySelector('.title input').value;
+                const content = document.querySelector('.write textarea').value;
+
+                if (title && content) {
+                    submitLetter({ title, content });
+                } else {
+                    alert('제목과 내용을 모두 입력하세요.');
+                }
+            });
+
+            function submitLetter(letter) {
+                fetch('/letters', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(letter),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data.message);
+                        window.location.href = 'index3.html'; // 등록 후 페이지 이동
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        });
+    </script>
+</body>
+
+</html>

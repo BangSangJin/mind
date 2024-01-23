@@ -1,0 +1,58 @@
+<!-- letter_write.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>letter_write</title> 
+    <link rel="stylesheet" href="./css/stylesheet5.css" type="text/css">
+</head>
+<body>
+    <header>
+        <a href="./index3.html">취소</a>
+        <a href="index.html"><img src="./img/logo_white.png" alt="logo"></a>
+        <a href="index3.html">등록</a>
+    </header>
+    <div class="wrap">
+        <div class="title">
+            <h2>제목</h2>
+            <input type="text" placeholder="제목을 입력해 주세요">
+        </div>
+        <div class="write">
+            <textarea placeholder="편지를 적어주세요"></textarea>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const submitButton = document.querySelector('a[href="hong3.html"]');
+            submitButton.addEventListener('click', () => {
+                const title = document.querySelector('.title input').value;
+                const content = document.querySelector('.write textarea').value;
+
+                if (title && content) {
+                    submitLetter({ title, content });
+                } else {
+                    alert('제목과 내용을 모두 입력하세요.');
+                }
+            });
+
+            function submitLetter(letter) {
+                fetch('/letters', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(letter),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    window.location.href = 'hong3.html';  // 등록 후 페이지 이동
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        });
+    </script>
+</body>
+</html>

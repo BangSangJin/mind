@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>letter_write</title>
+    <link rel="stylesheet" href="./css/stylesheet5.css" type="text/css">
+</head>
+<body>
+    <header>
+        <a href="./hong3.html">취소</a>
+        <a href="hong.html"><img src="./img/logo_white.png" alt="logo"></a>
+        <button id="submitBtn">등록</button>
+    </header>
+    <div class="wrap">
+        <div class="title">
+            <h2>제목</h2>
+            <input type="text" id="letterTitle" placeholder="제목을 입력해 주세요">
+        </div>
+        <div class="write">
+            <textarea id="letterContent" placeholder="편지를 적어주세요"></textarea>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function submitLetter() {
+                const title = document.getElementById('letterTitle').value;
+                const content = document.getElementById('letterContent').value;
+
+                if (title.trim() === '' || content.trim() === '') {
+                    alert('제목과 내용을 모두 입력하세요.');
+                    return;
+                }
+
+                const letter = { title, content, id: generateId() };
+
+                fetch('/letters', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(letter),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    window.location.href = '/hong3.html';
+                })
+                .catch(error => console.error('Error:', error));
+            }
+
+            function generateId() {
+                return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+            }
+
+            document.getElementById('submitBtn').addEventListener('click', submitLetter);
+        });
+    </script>
+</body>
+</html>

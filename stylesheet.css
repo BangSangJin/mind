@@ -1,0 +1,148 @@
+@import url(./reset.css);
+body{
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+}
+header{
+    max-width: 500px;
+    width: 100%;
+    height: 4.3rem;
+background-color:rgba(0, 0, 0, 0.8);
+position: fixed;
+top: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 99;
+}
+.bgslide{
+    margin-top: 4.3rem;
+    width: 100%;
+    padding: 0;
+}
+.bgslide .box{
+    width: 100%;
+    padding: 0;
+    position: relative;
+}
+.bgslide .box p{
+    max-width: 500px;
+     width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 25%;
+left: 0;
+font-size: 1.8rem;
+    color: #fff;
+    line-height: 2rem;
+}
+.bgslide .box span{
+    font-size: 1.5rem;
+}
+.bgslide b{
+    font-weight: 800 ;
+}
+/* // */
+.title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+.title h2{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+}
+.title a{
+color: #ccc;
+font-size: .8rem;
+}
+.img, .video, .letter{
+    width: 100%;
+    padding: 1.25rem;
+    margin: .5rem 0;
+}
+/* 추모사진 */
+.imgscroll{
+    width: 100%;
+     overflow-x: scroll;
+     display: flex;
+     padding-bottom: 1.25rem;
+}
+.imgscroll img{
+    margin-right: .9rem;
+}
+.imgscroll img:last-of-type{
+    margin-right: 0;
+}
+.imgscroll::-webkit-scrollbar {
+    height: 5px;
+}
+.imgscroll::-webkit-scrollbar-thumb { background-color: #ccc; }
+.imgscroll::-webkit-scrollbar-track { background-color: #757575; }
+ 
+/* 추모영상 */
+.videobox{
+    display: flex;
+    justify-content: space-between;
+}
+.videobox a{
+    width: 48%;
+}
+/* 하늘편지 */
+.txtbox{
+    width: 100%;
+}
+.txt{
+    width: 100%;
+    border-bottom: 1px solid #757575;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+}
+.txt p{
+    color: #fff;
+    font-size: 1rem;
+}
+.txt span{
+    color: #ccc;
+    font-size: .85rem ;
+}
+/* 하늘공원 */
+.place .title{
+    width: 100%;
+    padding: 0 1.25rem;
+}
+.place{
+    width: 100%;
+    padding-bottom: 7rem;
+}
+.place .slick-slide{
+    margin: 0 1rem;
+}
+/* footer */
+footer{
+max-width: 500px;
+width: 100%;
+background-color: #000;
+position: fixed;
+bottom: 0;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 1.25rem;
+}
+footer a{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
+}
+footer a img{
+    margin-bottom: .3rem;
+} 
+
